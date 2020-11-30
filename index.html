@@ -51,13 +51,13 @@
 
 	<h3>Case 1</h3>
 
-	<div class="amazing-wrapper">
+	<div id="amazing-wrapper">
 		<em>Every single</em> <strong>strong</strong> shall be <strong>decorated</strong> with a <strong><em>unicorn</em></strong>, period!
 	</div>
 
 	<h3>Case 2</h3>
 
-	<div class="amazing-wrapper">
+	<div id="amazing-wrapper">
 		<p>We can also have <strong>some fun</strong> with lists:</p>
 		<ul>
 			<li>With <span>some random <strong>bolded text</strong>!</span></li>
@@ -71,7 +71,11 @@
 
 	<script>
 		( function( doc ) {
-			// Start here...
+			doc.querySelectorAll('#amazing-wrapper strong').forEach(element => {
+				var el = document.createElement("span");
+				el.innerHTML = "🦄";
+				element.parentNode.insertBefore(el, element.nextSibling)
+			});
 		} )( document );
 	</script>
 </body>
